@@ -1,0 +1,12 @@
+Ж-20 "Moroz" Spaceplane - 1.0 [2019-05-12]
+------------------------------------------
+
+	- Cargo Bay fix (Wrong iscalar Module)
+	- Fin Fix (Wrong axis)
+	- Light Animation added to all parts
+	- New Landing Skid
+	- New Adapter to 1.25
+	- Tag Added
+	- Fix of the Adapter (wrong rotation)
+	- Many fix on all Models
+
