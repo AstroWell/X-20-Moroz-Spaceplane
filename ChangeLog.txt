@@ -1,3 +1,17 @@
+Ж-20 "Moroz" Spaceplane - 1.1 [2019--]
+------------------------------------------
+
+	- Adapter 1.875 Texture Update
+	- New Folder / Path for the Mod
+	- New 1.25 Butt Adapter
+	- Cost/entryCost Balance
+	- Fix Manufacturer in Config
+	- CrashTolerance Review
+	- MaxTemp reduced to 3500 Max
+	- TechTree Review
+	- Fix on the Wings 3d Model
+
+
 Ж-20 "Moroz" Spaceplane - 1.0 [2019-05-12]
 ------------------------------------------
 
