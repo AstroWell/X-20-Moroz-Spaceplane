@@ -4,6 +4,7 @@
 	- Adapter 1.875 Texture Update
 	- New Folder / Path for the Mod
 	- New 1.25 Butt Adapter (Variant)
+	- New "Sanger" Cockpit
 	- Cost/entryCost Balance
 	- Fix Manufacturer in Config
 	- CrashTolerance Review
@@ -11,6 +12,7 @@
 	- TechTree Review
 	- Fix on the Wings 3d Model
 	- Fix of the Butt Texture (normals)
+	- Fix of Cockpit Texture (normals)
 
 
 Ж-20 "Moroz" Spaceplane - 1.0 [2019-05-12]
