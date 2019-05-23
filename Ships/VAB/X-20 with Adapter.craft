@@ -2,7 +2,7 @@ ship = X-20 with Adapter
 version = 1.7.0
 description = 
 type = VAB
-size = 3.80589056,23.3065662,2.07917404
+size = 3.85354066,7.23528671,1.875
 steamPublishedFileId = 0
 persistentId = 2291989743
 rot = 0,0,0,0
@@ -12,10 +12,10 @@ PART
 {
 	part = X20Cockpit_4294608910
 	partName = Part
-	persistentId = 2186500642
-	pos = -0.0145397671,20.4047623,1.19167352
+	persistentId = 722445177
+	pos = 0.789077938,26.0426197,-0.872067153
 	attPos = 0,0,0
-	attPos0 = -0.0145397671,20.4047623,1.19167352
+	attPos0 = 0.789077938,26.0426197,-0.872067153
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -33,9 +33,9 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = X20CargoBay_4294517994
 	link = X20.Skid_4294411240
-	attN = bottom,X20CargoBay_4294517994_0|-0.12983|0
+	link = X20CargoBay_4294626716
+	attN = bottom,X20CargoBay_4294626716_0|-0.12983|0
 	EVENTS
 	{
 	}
@@ -237,6 +237,22 @@ PART
 	}
 	MODULE
 	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleTripLogger
 		isEnabled = True
 		stagingEnabled = True
@@ -279,12 +295,74 @@ PART
 }
 PART
 {
-	part = X20CargoBay_4294517994
+	part = X20.Skid_4294411240
 	partName = Part
-	persistentId = 3980595770
-	pos = -0.0145397671,19.5279293,1.19167364
+	persistentId = 3458685627
+	pos = 0.789077938,27.685688,-0.465996683
 	attPos = 0,0,0
-	attPos0 = 0,-0.876830041,1.1920929E-07
+	attPos0 = 0,1.64306211,0.406070471
+	rot = -0.0517238081,-8.55453806E-08,-4.43066384E-09,0.998661518
+	attRot = 0,0,0,1
+	attRot0 = -0.0517238081,-8.55453806E-08,-4.43066739E-09,0.998661518
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,X20Cockpit_4294608910
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleAnimateGeneric
+		isEnabled = True
+		aniState = LOCKED
+		animSwitch = True
+		animTime = 0
+		animSpeed = -10
+		deployPercent = 100
+		animationIsDisabled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = Gear
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = X20CargoBay_4294626716
+	partName = Part
+	persistentId = 4188319598
+	pos = 0.789077938,25.1667862,-0.872067034
+	attPos = 0,0,0
+	attPos0 = 0,-0.875830054,1.1920929E-07
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -302,11 +380,11 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = X20Wing_4293854140
-	link = X20Wing_4293853366
+	link = X20.Payload.CrewTube_4294615236
 	link = X20Butt_4294525684
-	attN = front,X20Butt_4294525684_0|-0.747|0
-	attN = rear,X20Cockpit_4294608910_0|0.747|0
+	attN = front,X20Cockpit_4294608910_0|0.746|0
+	attN = rear,X20Butt_4294525684_0|-0.746|0
+	attN = frontInner,X20.Payload.CrewTube_4294615236_0|0.746|0
 	EVENTS
 	{
 	}
@@ -357,18 +435,34 @@ PART
 		{
 		}
 	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
 }
 PART
 {
-	part = X20Wing_4293854140
+	part = X20.Payload.CrewTube_4294615236
 	partName = Part
-	persistentId = 3359753536
-	pos = -0.508165717,19.4834938,1.56703699
-	attPos = 0.00637450814,0.0363192968,0.00676727295
-	attPos0 = -0.500000477,-0.080754064,0.368595928
-	rot = -2.08616228E-07,1.78813934E-07,-1.1920929E-07,-1
-	attRot = 0,0,0,1
-	attRot0 = -1.49011598E-07,1.7881392E-07,-1.19209275E-07,-1
+	persistentId = 998722681
+	pos = 0.789077938,25.4394855,-0.832067132
+	attPos = 0,0,0
+	attPos0 = 0,0.27270025,0.0399998873
+	rot = 0,0,0,-1
+	attRot = 0,0,0,-0.999999881
+	attRot0 = 0,0,0,-1
 	mir = 1,1,1
 	symMethod = Mirror
 	autostrutMode = Off
@@ -379,15 +473,13 @@ PART
 	sidx = -1
 	sqor = -1
 	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
+	attm = 0
+	modCost = 50
+	modMass = 0.0299999993
 	modSize = 0,0,0
-	link = X20Flap_4293848740
-	link = X20Fin_4293845054
-	link = X20.Skid_4294412674
-	sym = X20Wing_4293853366
-	srfN = srfAttach,X20CargoBay_4294517994
+	link = dockingPort3_4294598786
+	attN = top,X20CargoBay_4294626716_0|0.4733|-0.04
+	attN = Bay,dockingPort3_4294598786_0|0|-0.31
 	EVENTS
 	{
 	}
@@ -399,9 +491,11 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleLiftingSurface
+		name = ModulePartVariants
 		isEnabled = True
+		useVariantMass = True
 		stagingEnabled = True
+		selectedVariant = Bare
 		EVENTS
 		{
 		}
@@ -414,20 +508,10 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleRCSFX
+		name = ModuleColorChanger
 		isEnabled = True
-		rcsEnabled = True
-		thrustPercentage = 100
-		currentShowToggles = False
-		enableYaw = True
-		enablePitch = True
-		enableRoll = True
-		enableX = True
-		enableY = True
-		enableZ = True
-		useThrottle = False
-		fullThrust = False
-		stagingEnabled = False
+		animState = False
+		stagingEnabled = True
 		EVENTS
 		{
 		}
@@ -435,7 +519,7 @@ PART
 		{
 			ToggleAction
 			{
-				actionGroup = None
+				actionGroup = Light
 				wasActiveBeforePartWasAdjusted = False
 			}
 		}
@@ -443,29 +527,18 @@ PART
 		{
 		}
 	}
-	RESOURCE
-	{
-		name = MonoPropellant
-		amount = 10
-		maxAmount = 10
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
 }
 PART
 {
-	part = X20Wing_4293853366
+	part = dockingPort3_4294598786
 	partName = Part
-	persistentId = 542889655
-	pos = 0.47908619,19.4834938,1.56703699
-	attPos = -0.00637450814,0.0363190584,0.00676727295
-	attPos0 = 0.500000477,-0.080754064,0.368595928
-	rot = 1.19209204E-07,1,2.38418551E-07,-2.22525287E-07
-	attRot = 0,0,0,1
-	attRot0 = 1.19209247E-07,1,1.78813934E-07,-2.22525287E-07
+	persistentId = 1604550832
+	pos = 0.789077938,25.4394836,-1.14206755
+	attPos = 0,0,0
+	attPos0 = 0,-1.7881365E-07,-0.309999794
+	rot = -0.707106829,0,0,0.707106829
+	attRot = -0.707106769,0,0,0.707106769
+	attRot0 = 0.707106829,0,0,-0.707106829
 	mir = 1,1,1
 	symMethod = Mirror
 	autostrutMode = Off
@@ -475,16 +548,12 @@ PART
 	dstg = 0
 	sidx = -1
 	sqor = -1
-	sepI = -1
-	attm = 1
+	sepI = 0
+	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = X20Flap_4293847644
-	link = X20Fin_4293844968
-	link = X20.Skid_4294412142
-	sym = X20Wing_4293854140
-	srfN = srfAttach,X20CargoBay_4294517994
+	attN = bottom,X20.Payload.CrewTube_4294615236_0|0|0
 	EVENTS
 	{
 	}
@@ -496,356 +565,44 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleLiftingSurface
+		name = ModuleDockingNode
 		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleRCSFX
-		isEnabled = True
-		rcsEnabled = True
-		thrustPercentage = 100
-		currentShowToggles = False
-		enableYaw = True
-		enablePitch = True
-		enableRoll = True
-		enableX = True
-		enableY = True
-		enableZ = True
-		useThrottle = False
-		fullThrust = False
+		crossfeed = True
 		stagingEnabled = False
+		state = Ready
+		dockUId = 0
+		dockNodeIdx = 0
 		EVENTS
 		{
 		}
 		ACTIONS
 		{
-			ToggleAction
+			UndockAction
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = MonoPropellant
-		amount = 10
-		maxAmount = 10
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = X20Flap_4293848740
-	partName = Part
-	persistentId = 3703263043
-	pos = -1.07118356,17.5526276,1.55677176
-	attPos = 0,0,0
-	attPos0 = -0.563018322,-1.93086028,-0.0102644488
-	rot = 0.000485628261,0.999999881,1.49011584E-07,-9.17909638E-05
-	attRot = 0.707106709,0.707106709,0,0
-	attRot0 = -0.000485747994,-0.999999881,7.58859572E-11,9.19698941E-05
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = X20Flap_4293847644
-	srfN = srfAttach,X20Wing_4293854140
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleControlSurface
-		isEnabled = True
-		mirrorDeploy = False
-		usesMirrorDeploy = True
-		ignorePitch = False
-		ignoreYaw = False
-		ignoreRoll = False
-		deploy = False
-		deployInvert = False
-		partDeployInvert = False
-		authorityLimiter = 100
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ActionToggle
+			DecoupleAction
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-			ActionExtend
+			MakeReferenceToggle
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-			ActionRetract
+			EnableXFeedAction
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = X20Flap_4293847644
-	partName = Part
-	persistentId = 3804933605
-	pos = 1.0421046,17.5526276,1.55677176
-	attPos = 0,0,0
-	attPos0 = -0.563018322,-1.93086112,0.0102642868
-	rot = -5.96046391E-07,9.17469442E-05,-0.000485628145,-0.999999881
-	attRot = 0.707106709,0.707106709,0,0
-	attRot0 = 0.000485747907,0.999999881,-1.48914481E-07,9.19697341E-05
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = X20Flap_4293848740
-	srfN = srfAttach,X20Wing_4293853366
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleControlSurface
-		isEnabled = True
-		mirrorDeploy = True
-		usesMirrorDeploy = True
-		ignorePitch = False
-		ignoreYaw = False
-		ignoreRoll = False
-		deploy = False
-		deployInvert = False
-		partDeployInvert = False
-		authorityLimiter = 100
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ActionToggle
+			DisableXFeedAction
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
-			ActionExtend
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActionRetract
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = X20Fin_4293845054
-	partName = Part
-	persistentId = 665941175
-	pos = -1.80486083,17.3388271,1.56703734
-	attPos = 0.0443949699,-0.0523650646,0.0999993458
-	attPos0 = -1.34109056,-2.09229088,-0.0999978855
-	rot = 0.0116646271,0.707010508,-0.0116644483,0.707010746
-	attRot = 0.0164962318,4.25134559E-08,-3.15195536E-09,0.999863982
-	attRot0 = -0.0116645759,-0.707010627,0.0116646113,-0.707010627
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = X20Fin_4293844968
-	srfN = srfAttach,X20Wing_4293854140
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleControlSurface
-		isEnabled = True
-		mirrorDeploy = False
-		usesMirrorDeploy = True
-		ignorePitch = False
-		ignoreYaw = False
-		ignoreRoll = False
-		deploy = False
-		deployInvert = False
-		partDeployInvert = False
-		authorityLimiter = 100
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ActionToggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActionExtend
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActionRetract
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = X20Fin_4293844968
-	partName = Part
-	persistentId = 3716991466
-	pos = 1.77578318,17.3388252,1.56703639
-	attPos = 0.0443950891,-0.0523660183,-0.0999993756
-	attPos0 = -1.34109068,-2.09229183,0.0999976769
-	rot = -0.0116641512,0.707010806,0.0116647175,0.707010329
-	attRot = 0.0164962318,4.25134559E-08,-3.15195536E-09,0.999863982
-	attRot0 = 4.21468762E-08,-0.707106829,-2.11797846E-09,0.707106769
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = X20Fin_4293845054
-	srfN = srfAttach,X20Wing_4293853366
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleControlSurface
-		isEnabled = True
-		mirrorDeploy = True
-		usesMirrorDeploy = True
-		ignorePitch = False
-		ignoreYaw = False
-		ignoreRoll = False
-		deploy = False
-		deployInvert = False
-		partDeployInvert = False
-		authorityLimiter = 100
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ActionToggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActionExtend
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActionRetract
+			ToggleXFeedAction
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
@@ -860,10 +617,10 @@ PART
 {
 	part = X20Butt_4294525684
 	partName = Part
-	persistentId = 3235656995
-	pos = -0.0145397671,18.117466,1.19167376
+	persistentId = 4180922479
+	pos = 0.789077938,23.7573204,-0.872066915
 	attPos = 0,0,0
-	attPos0 = 0,-1.41046011,1.1920924E-07
+	attPos0 = 0,-1.40946031,1.1920924E-07
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -881,9 +638,11 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = X20Adapter_4294610530
-	attN = top,X20CargoBay_4294517994_0|0.66346|0
-	attN = bottom,X20Adapter_4294610530_0|-0.4674|0
+	link = X20Wing_4293854140
+	link = X20Wing_4294567746
+	link = X20Adapter_4294590568
+	attN = top,X20CargoBay_4294626716_0|0.66346|0
+	attN = bottom,X20Adapter_4294590568_0|-0.4674|0
 	EVENTS
 	{
 	}
@@ -892,83 +651,6 @@ PART
 	}
 	PARTDATA
 	{
-	}
-	MODULE
-	{
-		name = ModuleCommand
-		isEnabled = True
-		hibernation = False
-		hibernateOnWarp = False
-		activeControlPointName = _default
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			MakeReferenceToggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			HibernateToggle
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceContainer
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			CollectAllAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
 	}
 	MODULE
 	{
@@ -1046,6 +728,22 @@ PART
 	}
 	MODULE
 	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleTripLogger
 		isEnabled = True
 		stagingEnabled = True
@@ -1088,13 +786,310 @@ PART
 }
 PART
 {
+	part = X20Wing_4293854140
+	partName = Part
+	persistentId = 1749573206
+	pos = 0.271608591,25.1772881,-0.496434718
+	attPos = -0.0174689889,1.03998303,-0.00929266214
+	attPos0 = -0.500000358,0.379983068,0.38492474
+	rot = -1.19209275E-07,8.94069672E-08,-2.98023224E-08,-1
+	attRot = 0,0,0,1
+	attRot0 = -5.96046448E-08,8.94069672E-08,-2.98023224E-08,-1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = X20Flap_4293848740
+	link = X20Fin_4293845054
+	link = X20.Skid_4294412674
+	sym = X20Wing_4294567746
+	srfN = srfAttach,X20Butt_4294525684
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleLiftingSurface
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleRCSFX
+		isEnabled = True
+		rcsEnabled = True
+		thrustPercentage = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		enableX = True
+		enableY = True
+		enableZ = True
+		useThrottle = False
+		fullThrust = False
+		stagingEnabled = False
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 10
+		maxAmount = 10
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = X20Flap_4293848740
+	partName = Part
+	persistentId = 1809031576
+	pos = -0.291409552,23.2464123,-0.506698966
+	attPos = 0,0,0
+	attPos0 = -0.563018322,-1.93086028,-0.0102644488
+	rot = 0.000485717552,0.99999994,-5.96046519E-08,-9.18802107E-05
+	attRot = 0.707106709,0.707106709,0,0
+	attRot0 = -0.000485747994,-0.999999881,7.58859572E-11,9.19698941E-05
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = X20Flap_4294567644
+	srfN = srfAttach,X20Wing_4293854140
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		mirrorDeploy = False
+		usesMirrorDeploy = True
+		ignorePitch = False
+		ignoreYaw = False
+		ignoreRoll = False
+		deploy = False
+		deployInvert = False
+		partDeployInvert = False
+		authorityLimiter = 100
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActionExtend
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActionRetract
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = X20Fin_4293845054
+	partName = Part
+	persistentId = 3443295492
+	pos = -1.02508664,23.032608,-0.4964315
+	attPos = 0.0443949699,-0.0523650646,0.0999993458
+	attPos0 = -1.34109056,-2.09229088,-0.0999978855
+	rot = 0.011664629,0.707010508,-0.0116646588,0.707010686
+	attRot = 0.0164962318,4.25134559E-08,-3.15195536E-09,0.999863982
+	attRot0 = -0.0116645759,-0.707010627,0.0116646113,-0.707010627
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = X20Fin_4294567588
+	srfN = srfAttach,X20Wing_4293854140
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		mirrorDeploy = True
+		usesMirrorDeploy = True
+		ignorePitch = False
+		ignoreYaw = False
+		ignoreRoll = False
+		deploy = False
+		deployInvert = False
+		partDeployInvert = False
+		authorityLimiter = 100
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActionExtend
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActionRetract
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
 	part = X20.Skid_4294412674
 	partName = Part
-	persistentId = 3541032178
-	pos = -1.05493808,18.2150097,1.66124296
-	attPos = -0.141329587,-0.717614889,4.09781933E-07
+	persistentId = 793894617
+	pos = -0.277485192,23.8224297,-0.402225882
+	attPos = -0.143650651,-0.803983092,1.34110451E-06
 	attPos0 = -0.405443132,-0.550869107,0.0942062885
-	rot = -3.88622284E-05,-0.000176048808,1.12297116E-07,1
+	rot = -3.93092596E-05,-0.000175959489,2.29192629E-08,1
 	attRot = 0,0,0,1
 	attRot0 = 3.90410642E-05,0.000175870024,6.87576707E-09,-1
 	mir = 1,1,1
@@ -1111,7 +1106,7 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = X20.Skid_4294412142
+	sym = X20.Skid_4294567512
 	srfN = srfAttach,X20Wing_4293854140
 	EVENTS
 	{
@@ -1151,15 +1146,312 @@ PART
 }
 PART
 {
-	part = X20.Skid_4294412142
+	part = X20Wing_4294567746
 	partName = Part
-	persistentId = 2326402624
-	pos = 1.02585864,18.2150097,1.66124296
-	attPos = -0.141329736,-0.717614889,-5.88595867E-07
-	attPos0 = -0.405442864,-0.550869107,-0.0942062438
-	rot = -3.88622248E-05,0.000176048823,-1.12297116E-07,1
+	persistentId = 2121413550
+	pos = 1.30654728,25.1772881,-0.496434718
+	attPos = 0.0174689889,1.03998268,-0.00929272175
+	attPos0 = 0.500000358,0.379983068,0.384924859
+	rot = 2.98023153E-08,1,2.08616228E-07,-1.33118348E-07
 	attRot = 0,0,0,1
-	attRot0 = -6.86146251E-09,-1,-3.90708665E-05,0.000175826281
+	attRot0 = 2.98023011E-08,1,0,-1.33118334E-07
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = X20Flap_4294567644
+	link = X20Fin_4294567588
+	link = X20.Skid_4294567512
+	sym = X20Wing_4293854140
+	srfN = srfAttach,X20Butt_4294525684
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleLiftingSurface
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleRCSFX
+		isEnabled = True
+		rcsEnabled = True
+		thrustPercentage = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		enableX = True
+		enableY = True
+		enableZ = True
+		useThrottle = False
+		fullThrust = False
+		stagingEnabled = False
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 10
+		maxAmount = 10
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = X20Flap_4294567644
+	partName = Part
+	persistentId = 1710506512
+	pos = 1.86956549,23.2464123,-0.506698966
+	attPos = 0,0,0
+	attPos0 = -0.563018322,-1.93086028,-0.0102644488
+	rot = -1.49011584E-07,9.18362639E-05,-0.000485717261,-0.999999881
+	attRot = 0.707106709,0.707106709,0,0
+	attRot0 = -0.000485747994,-0.999999881,7.58859572E-11,9.19698941E-05
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = X20Flap_4293848740
+	srfN = srfAttach,X20Wing_4294567746
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		mirrorDeploy = True
+		usesMirrorDeploy = True
+		ignorePitch = False
+		ignoreYaw = False
+		ignoreRoll = False
+		deploy = False
+		deployInvert = False
+		partDeployInvert = False
+		authorityLimiter = 100
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActionExtend
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActionRetract
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = X20Fin_4294567588
+	partName = Part
+	persistentId = 2996194408
+	pos = 2.60324264,23.032608,-0.4964315
+	attPos = 0.0443949699,-0.0523650646,0.0999993458
+	attPos0 = -1.34109056,-2.09229088,-0.0999978855
+	rot = -0.0116645088,0.707010746,0.0116645684,0.707010388
+	attRot = 0.0164962318,4.25134559E-08,-3.15195536E-09,0.999863982
+	attRot0 = -0.0116645759,-0.707010627,0.0116646113,-0.707010627
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = X20Fin_4293845054
+	srfN = srfAttach,X20Wing_4294567746
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleControlSurface
+		isEnabled = True
+		mirrorDeploy = False
+		usesMirrorDeploy = True
+		ignorePitch = False
+		ignoreYaw = False
+		ignoreRoll = False
+		deploy = False
+		deployInvert = False
+		partDeployInvert = False
+		authorityLimiter = 100
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ActionToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActionExtend
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActionRetract
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = X20.Skid_4294567512
+	partName = Part
+	persistentId = 3362479509
+	pos = 1.85564113,23.8224277,-0.402225882
+	attPos = -0.143650651,-0.803983092,1.34110451E-06
+	attPos0 = -0.405443132,-0.550869107,0.0942062885
+	rot = -3.91006433E-05,0.000175959445,-2.2904711E-08,1
+	attRot = 0,0,0,1
+	attRot0 = 3.90410642E-05,0.000175870024,6.87576707E-09,-1
 	mir = 1,1,1
 	symMethod = Mirror
 	autostrutMode = Off
@@ -1175,7 +1467,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = X20.Skid_4294412674
-	srfN = srfAttach,X20Wing_4293853366
+	srfN = srfAttach,X20Wing_4294567746
 	EVENTS
 	{
 	}
@@ -1214,79 +1506,17 @@ PART
 }
 PART
 {
-	part = X20.Skid_4294411240
+	part = X20Adapter_4294590568
 	partName = Part
-	persistentId = 872395818
-	pos = -0.0145397671,22.0478268,1.59774399
+	persistentId = 3857174829
+	pos = 0.789077938,22.7433758,-0.872066677
 	attPos = 0,0,0
-	attPos0 = 0,1.64306211,0.406070471
-	rot = -0.0517238081,-8.55453806E-08,-4.43066384E-09,0.998661518
-	attRot = 0,0,0,1
-	attRot0 = -0.0517238081,-8.55453806E-08,-4.43066739E-09,0.998661518
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,X20Cockpit_4294608910
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleAnimateGeneric
-		isEnabled = True
-		aniState = LOCKED
-		animSwitch = True
-		animTime = 0
-		animSpeed = -10
-		deployPercent = 100
-		animationIsDisabled = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = Gear
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = X20Adapter_4294610530
-	partName = Part
-	persistentId = 2773931572
-	pos = -0.0145397671,17.1035271,1.19167376
-	attPos = 0,0,0
-	attPos0 = 0,-1.01393878,0
+	attPos0 = 0,-1.01394081,2.38418494E-07
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
-	symMethod = Radial
+	symMethod = Mirror
 	autostrutMode = Off
 	rigidAttachment = False
 	istg = 0
@@ -1382,5 +1612,65 @@ PART
 		UPGRADESAPPLIED
 		{
 		}
+	}
+	MODULE
+	{
+		name = ModuleResourceConverter
+		isEnabled = True
+		EfficiencyBonus = 1
+		IsActivated = False
+		stagingEnabled = True
+		lastUpdateTime = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StopResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			StartResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleResourceConverterAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 0
+		maxAmount = 150
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
 	}
 }

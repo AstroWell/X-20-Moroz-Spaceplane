@@ -1,8 +1,8 @@
-ship = X-20 - Crew
+ship = X-20 - Payload
 version = 1.7.0
 description = 
 type = SPH
-size = 3.85354042,1.81334305,7.059237
+size = 3.85354042,1.81334305,7.05923796
 steamPublishedFileId = 0
 persistentId = 2291989743
 rot = 0,0,0,0
@@ -12,7 +12,7 @@ PART
 {
 	part = X20Cockpit_4294608910
 	partName = Part
-	persistentId = 169558548
+	persistentId = 3033647313
 	pos = 0,10,0
 	attPos = 0,0,0
 	attPos0 = 0,10,0
@@ -34,8 +34,8 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	link = X20.Skid_4294411240
-	link = X20CrewCabin_4294549258
-	attN = bottom,X20CrewCabin_4294549258_0|-0.12983|0
+	link = X20CargoBay_4294626716
+	attN = bottom,X20CargoBay_4294626716_0|-0.12983|0
 	EVENTS
 	{
 	}
@@ -297,8 +297,8 @@ PART
 {
 	part = X20.Skid_4294411240
 	partName = Part
-	persistentId = 2398538481
-	pos = 0,9.59392929,1.6430676
+	persistentId = 2400380467
+	pos = 0,9.59392929,1.64306712
 	attPos = 0,0,0
 	attPos0 = 0,1.64306211,0.406070471
 	rot = 0.669586122,-5.73567718E-08,-6.36226787E-08,0.742734611
@@ -357,10 +357,10 @@ PART
 }
 PART
 {
-	part = X20CrewCabin_4294549258
+	part = X20CargoBay_4294626716
 	partName = Part
-	persistentId = 1140089481
-	pos = 0,10,-0.875830889
+	persistentId = 3979046316
+	pos = 0,10,-0.875831842
 	attPos = 0,0,0
 	attPos0 = 0,-0.875830054,1.1920929E-07
 	rot = 0.707106829,0,0,0.707106829
@@ -380,9 +380,11 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
+	link = X20.Payload.CrewTube_4294615236
 	link = X20Butt_4294525684
-	attN = top,X20Cockpit_4294608910_0|0.746|0
-	attN = bottom,X20Butt_4294525684_0|-0.746|0
+	attN = front,X20Cockpit_4294608910_0|0.746|0
+	attN = rear,X20Butt_4294525684_0|-0.746|0
+	attN = frontInner,X20.Payload.CrewTube_4294615236_0|0.746|0
 	EVENTS
 	{
 	}
@@ -394,23 +396,21 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleScienceExperiment
+		name = ModuleAnimateGeneric
 		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
+		aniState = LOCKED
+		animSwitch = False
+		animTime = 1
+		animSpeed = 10
+		deployPercent = 100
+		animationIsDisabled = False
 		stagingEnabled = True
 		EVENTS
 		{
 		}
 		ACTIONS
 		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
+			ToggleAction
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
@@ -422,7 +422,7 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleScienceContainer
+		name = ModuleCargoBay
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -430,11 +430,77 @@ PART
 		}
 		ACTIONS
 		{
-			CollectAllAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = X20.Payload.CrewTube_4294615236
+	partName = Part
+	persistentId = 21260973
+	pos = 0,9.96000004,-0.603132248
+	attPos = 0,0,0
+	attPos0 = 0,0.27270025,0.0399998873
+	rot = -0.707106829,0,0,-0.707106829
+	attRot = 0,0,0,-0.999999881
+	attRot0 = 0,0,0,-1
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	modCost = 50
+	modMass = 0.0299999993
+	modSize = 0,0,0
+	link = dockingPort3_4294598786
+	attN = top,X20CargoBay_4294626716_0|0.4733|-0.04
+	attN = Bay,dockingPort3_4294598786_0|0|-0.31
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		selectedVariant = Bare
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -461,58 +527,86 @@ PART
 		{
 		}
 	}
+}
+PART
+{
+	part = dockingPort3_4294598786
+	partName = Part
+	persistentId = 1774530236
+	pos = 0,10.2700005,-0.603133202
+	attPos = 0,0,0
+	attPos0 = 0,-1.7881365E-07,-0.309999794
+	rot = 0,0,0,1.00000012
+	attRot = -0.707106769,0,0,0.707106769
+	attRot0 = 0.707106829,0,0,-0.707106829
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	attN = bottom,X20.Payload.CrewTube_4294615236_0|0|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
 	MODULE
 	{
-		name = ModuleDataTransmitter
+		name = ModuleDockingNode
 		isEnabled = True
-		xmitIncomplete = False
-		stagingEnabled = True
+		crossfeed = True
+		stagingEnabled = False
+		state = Ready
+		dockUId = 0
+		dockNodeIdx = 0
 		EVENTS
 		{
 		}
 		ACTIONS
 		{
-			StartTransmissionAction
+			UndockAction
 			{
 				actionGroup = None
-				active = False
 				wasActiveBeforePartWasAdjusted = False
 			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModulePartVariants
-		isEnabled = True
-		useVariantMass = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTripLogger
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		Log
-		{
-			flight = 0
+			DecoupleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			MakeReferenceToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			EnableXFeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			DisableXFeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleXFeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -523,8 +617,8 @@ PART
 {
 	part = X20Butt_4294525684
 	partName = Part
-	persistentId = 2476248812
-	pos = 0,10,-2.28529334
+	persistentId = 210273470
+	pos = 0,10,-2.28529525
 	attPos = 0,0,0
 	attPos0 = 0,-1.40946031,1.1920924E-07
 	rot = 0.707106829,0,0,0.707106829
@@ -546,7 +640,7 @@ PART
 	modSize = 0,0,0
 	link = X20Wing_4293854140
 	link = X20Wing_4294567746
-	attN = top,X20CrewCabin_4294549258_0|0.66346|0
+	attN = top,X20CargoBay_4294626716_0|0.66346|0
 	EVENTS
 	{
 	}
@@ -692,8 +786,8 @@ PART
 {
 	part = X20Wing_4293854140
 	partName = Part
-	persistentId = 3810629848
-	pos = -0.517469347,9.62436771,-0.865324736
+	persistentId = 2554103090
+	pos = -0.517469347,9.62436771,-0.865328312
 	attPos = -0.0174689889,1.03998303,-0.00929266214
 	attPos0 = -0.500000358,0.379983068,0.38492474
 	rot = -0.707106888,8.42937027E-08,4.21468513E-08,-0.707106769
@@ -805,8 +899,8 @@ PART
 {
 	part = X20Flap_4293848740
 	partName = Part
-	persistentId = 589052521
-	pos = -1.08048749,9.63463211,-2.79620147
+	persistentId = 2941017149
+	pos = -1.08048749,9.63463211,-2.79620337
 	attPos = 0,0,0
 	attPos0 = -0.563018322,-1.93086028,-0.0102644488
 	rot = 0.000278485066,0.707106829,0.707106709,-0.000408423308
@@ -897,8 +991,8 @@ PART
 {
 	part = X20Fin_4293845054
 	partName = Part
-	persistentId = 4137222106
-	pos = -1.81416464,9.62436485,-3.01000643
+	persistentId = 860518756
+	pos = -1.81416464,9.62436485,-3.0100069
 	attPos = 0.0443949699,-0.0523650646,0.0999993458
 	attPos0 = -1.34109056,-2.09229088,-0.0999978855
 	rot = 0.508180201,0.508180141,0.491683811,0.49168393
@@ -989,8 +1083,8 @@ PART
 {
 	part = X20.Skid_4294412674
 	partName = Part
-	persistentId = 3545014628
-	pos = -1.06656313,9.530159,-2.22018504
+	persistentId = 3919565291
+	pos = -1.06656313,9.530159,-2.22018719
 	attPos = -0.143650651,-0.803983092,1.34110451E-06
 	attPos0 = -0.405443132,-0.550869107,0.0942062885
 	rot = 0.707079053,-0.00012443836,-0.000124405939,0.707134604
@@ -1052,8 +1146,8 @@ PART
 {
 	part = X20Wing_4294567746
 	partName = Part
-	persistentId = 3642329507
-	pos = 0.517469347,9.62436771,-0.865325212
+	persistentId = 2153537240
+	pos = 0.517469347,9.62436771,-0.865328789
 	attPos = 0.0174689889,1.03998268,-0.00929272175
 	attPos0 = 0.500000358,0.379983068,0.384924859
 	rot = -7.30554746E-08,0.707106709,0.707106948,-1.15202312E-07
@@ -1165,11 +1259,11 @@ PART
 {
 	part = X20Flap_4294567644
 	partName = Part
-	persistentId = 438930533
-	pos = 1.08048749,9.63463211,-2.79620242
+	persistentId = 1956320576
+	pos = 1.08048749,9.63463211,-2.79620433
 	attPos = 0,0,0
 	attPos0 = -0.563018322,-1.93086028,-0.0102644488
-	rot = -0.707106888,0.000408392079,-0.000278515945,-0.70710665
+	rot = -0.707106888,0.000408392109,-0.000278515974,-0.70710665
 	attRot = 0.707106709,0.707106709,0,0
 	attRot0 = -0.000485747994,-0.999999881,7.58859572E-11,9.19698941E-05
 	mir = 1,1,1
@@ -1257,11 +1351,11 @@ PART
 {
 	part = X20Fin_4294567588
 	partName = Part
-	persistentId = 3772601297
-	pos = 1.81416464,9.62436485,-3.01000786
+	persistentId = 3524053885
+	pos = 1.81416464,9.62436485,-3.01000834
 	attPos = 0.0443949699,-0.0523650646,0.0999993458
 	attPos0 = -1.34109056,-2.09229088,-0.0999978855
-	rot = 0.491683841,0.491684049,0.508180261,0.508179963
+	rot = 0.4916839,0.491684049,0.508180261,0.508180022
 	attRot = 0.0164962318,4.25134559E-08,-3.15195536E-09,0.999863982
 	attRot0 = -0.0116645759,-0.707010627,0.0116646113,-0.707010627
 	mir = 1,1,1
@@ -1349,8 +1443,8 @@ PART
 {
 	part = X20.Skid_4294567512
 	partName = Part
-	persistentId = 3484524117
-	pos = 1.06656313,9.530159,-2.22018576
+	persistentId = 2492738503
+	pos = 1.06656313,9.530159,-2.2201879
 	attPos = -0.143650651,-0.803983092,1.34110451E-06
 	attPos0 = -0.405443132,-0.550869107,0.0942062885
 	rot = 0.707079172,0.000124438317,0.000124405924,0.707134485
