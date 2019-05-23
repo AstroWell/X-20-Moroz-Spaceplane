@@ -1,4 +1,4 @@
-Ж-20 "Moroz" Spaceplane - 1.1 [2019--]
+Ж-20 "Moroz" Spaceplane - 1.1 [2019-05-23]
 ------------------------------------------
 
 	- Adapter 1.875 Texture Update
@@ -13,6 +13,9 @@
 	- Fix on the Wings 3d Model
 	- Fix of the Butt Texture (normals)
 	- Fix of Cockpit Texture (normals)
+	- Texture DDS Conversion
+	- New White variant
+	- New Brown Variant for the Adapter
 
 
 Ж-20 "Moroz" Spaceplane - 1.0 [2019-05-12]
