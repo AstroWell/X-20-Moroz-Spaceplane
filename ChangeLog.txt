@@ -1,3 +1,10 @@
+Ж-20 "Moroz" Spaceplane - 1.2 []
+------------------------------------------
+
+	- "Sanger" Cockpit now need a crew to operate
+	- Reduced ElectricCharge needed for reaction wheel of Sanger and Moroz cockpit
+	
+
 Ж-20 "Moroz" Spaceplane - 1.1 [2019-05-23]
 ------------------------------------------
 
