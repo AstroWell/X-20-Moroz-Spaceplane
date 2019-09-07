@@ -3,6 +3,7 @@
 
 	- "Sanger" Cockpit now need a crew to operate
 	- Reduced ElectricCharge needed for reaction wheel of Sanger and Moroz cockpit
+	- Fix inverted normal poly on the crew tube model
 	
 
 Ж-20 "Moroz" Spaceplane - 1.1 [2019-05-23]
