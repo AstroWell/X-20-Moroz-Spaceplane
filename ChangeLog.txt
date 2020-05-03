@@ -1,3 +1,10 @@
+Ж-20 "Moroz" Spaceplane - 1.3 [2020-05-03]
+------------------------------------------
+
+	- Added Nodes on cockpit for the Heatshield Windows cover
+	- New Heatshield windows cover
+	- New white variant for the crew tube
+
 Ж-20 "Moroz" Spaceplane - 1.2 [2019-09-07]
 ------------------------------------------
 
