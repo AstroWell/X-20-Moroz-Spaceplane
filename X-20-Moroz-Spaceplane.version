@@ -1,0 +1,31 @@
+{
+	"NAME": "X-20-Moroz-Spaceplane",
+	"URL": "https://raw.githubusercontent.com/AstroWell/X-20-Moroz-Spaceplane/master/X-20-Moroz-Spaceplane.version",
+	"DOWNLOAD" : "https://github.com/AstroWell/X-20-Moroz-Spaceplane/releases",
+	"GITHUB": {
+		"USERNAME": "AstroWell",
+		"REPOSITORY": "X-20-Moroz-Spaceplane",
+		"ALLOW_PRE_RELEASE": false
+	},
+	"VERSION": {
+		"MAJOR": 1,
+		"MINOR": 3,
+		"PATCH": 0
+	},
+	"KSP_VERSION":
+    {
+        "MAJOR":1,
+        "MINOR":12,
+        "PATCH":5
+    },
+    "KSP_VERSION_MIN":{
+        "MAJOR":1,
+        "MINOR":10,
+        "PATCH":1
+    },
+    "KSP_VERSION_MAX":{
+        "MAJOR":1,
+        "MINOR":12,
+        "PATCH":99
+    }
+}
